@@ -7,15 +7,14 @@
 // Modules
 @import "modules/variables";
 @import "modules/mixins";
-@import "modules/fonts";
+@import "bourbon/bourbon";
+@import "base/base";
+@import "neat/neat";
 
 // Partials
 @import "partials/reset";
-@import "partials/wordpress";
 @import "partials/utils";
 @import "partials/wrapper";
 @import "partials/header";
-@import "partials/nav";
-@import "partials/sidebar";
 @import "partials/footer";
 @import "partials/print";
