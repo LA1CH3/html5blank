@@ -2,3 +2,6 @@
 node_modules
 src/bower_components
 .sass-cache
+src/css/sass/bourbon
+src/css/sass/base
+src/css/sass/neat

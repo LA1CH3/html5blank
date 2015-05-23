@@ -2,6 +2,8 @@
 
 ## Forked from [HTML5 Blank](http://html5blank.com)
 
+This is a basic starter theme for Wordpress themes that will get you developing ASAP. Includes almost all your standard page templates and a fully loaded functions.php file, as well as Sass integration with Bourbon (mixin library), Bitters (CSS scaffolding) and Neat (Bourbon semantic grid system). Additionally you get to use Bower for front-end package management, as well as Gulp for build. This theme also includes: jQuery, Modernizr, Normalize.css, and Conditionizr. 
+
 * Go to the Wordpress' theme folder (`.../wp-content/themes`)
 * In CLI, run: `git clone https://github.com/LA1CH3/html5blank.git`
 * `cd html5blank` and then run the following commands:
@@ -13,6 +15,11 @@
         + `bitters install`
         + `bourbon install`
         + `neat install`
+
+**When using Neat:**
+Uncomment the following line in _base.scss in sass/base:
+`@import "grid-settings";`
+You also need to change the import for neat-helpers inside _grid-settings.scss to "../neat/neat-helpers".
 
 If you're unfamiliar, Gulp is used as our build tool, which will handle Sass compilation and concatenation, JSHint, minification, livereload for rapid development, and much more. 
 
