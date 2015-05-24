@@ -2,6 +2,7 @@
 node_modules
 src/bower_components
 .sass-cache
+Gemfile.lock
 src/css/sass/bourbon
 src/css/sass/base
 src/css/sass/neat
