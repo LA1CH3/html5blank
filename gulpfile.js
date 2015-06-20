@@ -6,6 +6,10 @@ var gulp = require( "gulp" ),
 	/** @type {Object} Loader of Gulp plugins from `package.json` */
 	$ = require( "gulp-load-plugins" )(),
 	/** @type {Array} JS source files to concatenate and uglify */
+
+	imagemin = require('gulp-imagemin'),
+	pngquant = require('imagemin-pngquant'),
+
 	uglifySrc = [
 		/** Modernizr */
 		"src/bower_components/modernizr/modernizr.js",
@@ -110,6 +114,16 @@ gulp.task( "jshint", function () {
 		.pipe( $.jshint.reporter( "fail" ) );
 });
 
+gulp.task('imagemin', function () {
+    return gulp.src("src/img/*")
+        .pipe(imagemin({
+            progressive: true,
+            svgoPlugins: [{removeViewBox: false}],
+            use: [pngquant()]
+        }))
+        .pipe(gulp.dest('dist'));
+});
+
 /** Templates */
 gulp.task( "template", function() {
 	console.log( "`template` task run in `" + env + "` environment" );
@@ -163,6 +177,7 @@ gulp.task( "build", [
 	"template",
 	"styles",
 	"jshint",
+	"imagemin",
 	"copy",
 	"uglify"
 ], function () {
