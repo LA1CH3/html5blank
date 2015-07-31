@@ -110,7 +110,7 @@ function html5blank_header_scripts()
                     'conditionizr',
                     'modernizr',
                     'jquery'),
-                '1.0.0');
+                '1.0.0', true);
 
             // Enqueue Scripts
             wp_enqueue_script('html5blankscripts');
